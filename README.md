@@ -6,9 +6,7 @@
 
 _Abstract diagram only — not a product screenshot. No WhatsApp/Meta branding._
 
-<p align="center">
-  <img src="docs/assets/readme/architecture-flow.svg" alt="propose → validate → route architecture" width="920"/>
-</p>
+![propose → validate → route architecture](docs/assets/readme/architecture-flow.svg)
 
 ## Hosting (what this is)
 
@@ -37,34 +35,50 @@ Source of truth: [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) · [`docs/SPEC.md`](
 | LLM | Optional BYOK adapter — **later** (M4 deferred) |
 | CI | **Pending** — restore `.github/ci.yml.pending` → `.github/workflows/ci.yml` after `gh auth refresh -h github.com -s workflow` |
 
-## Install / commands (local)
+## Install
+
+**Not on the npm registry yet.** Install from GitHub or from a local clone:
 
 ```bash
+# Consumer install (GitHub)
+npm install github:arsalan-arshad/urdu-business-nlu
+
+# Local clone (develop / contribute)
+git clone https://github.com/arsalan-arshad/urdu-business-nlu.git
+cd urdu-business-nlu
 npm install
 npm test
 npm run build
 ```
 
-## Usage (rules-only core)
+Requires Node **>= 18**. When/if the package is published to npm, `npm install urdu-business-nlu` will work; until then use the GitHub or local path above.
+
+More detail: [`docs/USAGE.md`](docs/USAGE.md).
+
+## Usage (rules-only, offline)
+
+Public exports match [`src/index.ts`](src/index.ts): `propose`, `extract`, `validateRecord`, `route`, plus normalisers. Rules-only path needs **no network and no API keys**.
 
 ```ts
 import { propose, extract, validateRecord, route } from "urdu-business-nlu";
 
-// Rules-only path: text → candidate (already validated + routed)
+// Rules-only: text → candidate (already validated + routed)
 const record = propose("PARTY_A ko 5 carton oil bhej do");
 // record.route === "auto" | "confirm" | "reject"
-// extract(text) is the same rules-only function until an LLM adapter (later)
 
-// Or propose a candidate yourself and validate:
+// extract is the same function until an optional LLM adapter (later)
+const same = extract("PARTY_A ko 5 carton oil bhej do");
+
+// Or validate a candidate yourself:
 const { issues } = validateRecord(record, "PARTY_A ko 5 carton oil bhej do");
 route(issues);
 ```
 
 Every number in a candidate must be traceable (after normalisation / number-word parse) to the input. Ungrounded qty/amount → `reject`. Ambiguous `kal`, missing currency/direction, etc. → `confirm`.
 
-<p align="center">
-  <img src="docs/assets/readme/example-flow-card.svg" alt="Synthetic example input to confirm route" width="720"/>
-</p>
+Contract and eval evidence (cite reports; **no marketing accuracy %**): [`docs/SPEC.md`](docs/SPEC.md) · [M3 go/no-go](docs/eval-reports/M3-go-no-go-2026-11-04.md) · [gold baseline](docs/eval-reports/rules-only-gold-baseline-2026-11-03.md).
+
+![Synthetic example input to confirm route](docs/assets/readme/example-flow-card.svg)
 
 ## Architecture
 

@@ -1,6 +1,6 @@
 # Urdu Business NLU — Project Context (for Claude)
 
-_Snapshot: 2026-11-04 · **v0.1.0 released (CI still parked)** · GitHub About set; tag/release [v0.1.0](https://github.com/arsalan-arshad/urdu-business-nlu/releases/tag/v0.1.0) matches `package.json`; npm **not** published; `.github/ci.yml.pending` until `gh auth refresh -s workflow`; rulesets applied; rules-only v0 **GO**; D5=**CC-BY-4.0**; `npm test` 71._
+_Snapshot: 2026-11-04 · **README install/usage + fixed example SVG** · Install docs live in `README.md` + `docs/USAGE.md` (GitHub/`github:` install; npm registry still unpublished); `example-flow-card.svg` re-encoded UTF-8 (Latin-1 middots broke GitHub render); CI still parked; v0.1.0 tag; rules-only v0 **GO**; `npm test` 71._
 _Contains NO secrets. Never paste keys, real customer messages or phone numbers into chat or docs._
 
 ## 1. What this is
@@ -54,7 +54,7 @@ Public GitHub repo `urdu-business-nlu` (MIT) — created under owner account whe
 
 ## 10. Punch list
 **Open:** M5 CI restore — owner `gh auth refresh -h github.com -s workflow`, then restore `.github/ci.yml.pending` → `.github/workflows/ci.yml` and push (sections 28–29; rulesets already applied; required check `test` will stay missing until then); npm publish / public write-up / dataset publish (still ask-first); M1 shop outreach deferred (Q2 synthetic-only 90d); bare hazaar deferred; N2 LLM/hybrid arms (need key); M4 LLM adapter deferred; voice adapter + consented WA-domain WER (out of Q3 v0).
-**Resolved:** N1/N3/N4; SPEC §7 ~101 proposed; adversary demotions; Q1/Q2/Q3/D1; M2 scaffold + proposer; Week-1/Week-2 stamps + gold 101 (sections 22–25); **owner-delegated bilingual pass** (section 26); **D5=CC-BY-4.0** (section 26); **M3 GO rules-only v0** (section 26); bill-amount attach polish; baseline silent 0/96; `npm test` 71; **M5 local scaffold + empty public GitHub repo** (section 27); **`main` pushed + rulesets applied; CI parked** (section 28); **About + v0.1.0 tag/release** (section 29; npm still unpublished).
+**Resolved:** N1/N3/N4; SPEC §7 ~101 proposed; adversary demotions; Q1/Q2/Q3/D1; M2 scaffold + proposer; Week-1/Week-2 stamps + gold 101 (sections 22–25); **owner-delegated bilingual pass** (section 26); **D5=CC-BY-4.0** (section 26); **M3 GO rules-only v0** (section 26); bill-amount attach polish; baseline silent 0/96; `npm test` 71; **M5 local scaffold + empty public GitHub repo** (section 27); **`main` pushed + rulesets applied; CI parked** (section 28); **About + v0.1.0 tag/release** (section 29; npm still unpublished); **README Install/Usage + UTF-8 example SVG + `docs/USAGE.md`** (section 30).
 
 ## 11. Working agreements
 - Deterministic core; AI proposes, validator decides; zero silent errors as the goal.
@@ -515,3 +515,23 @@ Until then: required status check `test` cannot run; CI remains parked at `.gith
 **Evidence:** `gh api repos/...` About fields; release URL above; local tag `v0.1.0` on commit with `package.json` 0.1.0; scopes still lack `workflow`.
 
 **Supersedes:** section 28 “Still ask-first — Tag v0”; punch-list tag open.
+
+## 30. Session update: README install docs + fix broken example SVG (2026-11-04)
+
+Owner reported broken README image (“Synthetic example input to confirm route”) and asked where/when install + how-to-use docs would be written.
+
+### Cause
+`docs/assets/readme/example-flow-card.svg` was **not missing** and the relative path `docs/assets/readme/example-flow-card.svg` was correct. The file contained **Latin-1 `0xb7` middle-dots** (invalid UTF-8). GitHub/`<img>` failed to render it. Architecture SVG was already valid UTF-8.
+
+### Done
+- Recreated `example-flow-card.svg` as valid UTF-8 (ASCII separators; same synthetic kal → confirm card).
+- README **Install** + **Usage** expanded now: honest that npm registry publish is **not** done; `npm install github:arsalan-arshad/urdu-business-nlu` or local clone; real `propose`/`extract`/`validateRecord`/`route` from `src/index.ts`; rules-only offline; links to SPEC + eval reports; **no fake accuracy %**.
+- Added [`docs/USAGE.md`](docs/USAGE.md) for expanded notes; README remains the quickstart.
+- Switched architecture + example images to Markdown image syntax with the same relative paths.
+- Did **not** touch `.github/workflows`.
+
+### Where install docs live (now)
+- Primary: root `README.md` → **Install** and **Usage**
+- Extra: `docs/USAGE.md`
+
+**Evidence:** local UTF-8 decode of `example-flow-card.svg`; README sections; `docs/USAGE.md`.
