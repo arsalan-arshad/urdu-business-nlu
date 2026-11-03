@@ -14,7 +14,7 @@ _Abstract diagram only — not a product screenshot. No WhatsApp/Meta branding._
 
 This is an **npm/TypeScript library + eval set**, not a hosted SaaS. Source lives on **GitHub**; when the package is published, consumers install it with npm. There is **no Railway/app hosting** for the core product, and no always-on API in v0. An optional hosted API remains a possible later add-on and is out of scope for this release.
 
-**CI (pending):** GitHub Actions is not on `main` yet — the token lacked the `workflow` OAuth scope, so the workflow is parked at [`.github/ci.yml.pending`](.github/ci.yml.pending). After `gh auth refresh -h github.com -s workflow`, restore it to `.github/workflows/ci.yml`, push, then run `./scripts/apply-github-rulesets.sh`.
+**CI (pending):** GitHub Actions is not on `main` yet — the token lacked the `workflow` OAuth scope, so the workflow is parked at [`.github/ci.yml.pending`](.github/ci.yml.pending). Branch/tag rulesets are already applied. After `gh auth refresh -h github.com -s workflow`, restore the file to `.github/workflows/ci.yml` and push.
 
 ## What this is
 

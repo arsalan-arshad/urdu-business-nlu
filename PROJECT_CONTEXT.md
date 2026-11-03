@@ -1,6 +1,6 @@
 # Urdu Business NLU — Project Context (for Claude)
 
-_Snapshot: 2026-11-04 · **M5 push (main on GitHub; CI parked)** · `main` pushed without `.github/workflows/` (token has `repo`, not `workflow`); workflow at `.github/ci.yml.pending`; rulesets still pending; npm **not** published; rules-only v0 **GO**; D5=**CC-BY-4.0**; `npm test` 71._
+_Snapshot: 2026-11-04 · **M5 push done (CI parked)** · `main` on GitHub without Actions workflow; `.github/ci.yml.pending` ready; **rulesets applied** (main + version-tags); restore CI after `gh auth refresh -s workflow`; npm **not** published; rules-only v0 **GO**; D5=**CC-BY-4.0**; `npm test` 71._
 _Contains NO secrets. Never paste keys, real customer messages or phone numbers into chat or docs._
 
 ## 1. What this is
@@ -53,8 +53,8 @@ Public GitHub repo `urdu-business-nlu` (MIT) — created under owner account whe
 | **N4** | Privacy/legal: status of Pakistani data-protection rules for storing message samples; consent wording | Written checklist (not legal advice) |
 
 ## 10. Punch list
-**Open:** M5 CI + rulesets — owner `gh auth refresh -h github.com -s workflow`, restore `.github/ci.yml.pending` → `.github/workflows/ci.yml`, push, then `./scripts/apply-github-rulesets.sh` (section 28); tag v0 / npm publish / public write-up / dataset publish (still ask-first); M1 shop outreach deferred (Q2 synthetic-only 90d); bare hazaar deferred; N2 LLM/hybrid arms (need key); M4 LLM adapter deferred; voice adapter + consented WA-domain WER (out of Q3 v0).
-**Resolved:** N1/N3/N4; SPEC §7 ~101 proposed; adversary demotions; Q1/Q2/Q3/D1; M2 scaffold + proposer; Week-1/Week-2 stamps + gold 101 (sections 22–25); **owner-delegated bilingual pass** (section 26); **D5=CC-BY-4.0** (section 26); **M3 GO rules-only v0** (section 26); bill-amount attach polish; baseline silent 0/96; `npm test` 71; **M5 local scaffold + empty public GitHub repo** (section 27); **`main` pushed without workflows** (section 28).
+**Open:** M5 CI restore — owner `gh auth refresh -h github.com -s workflow`, then restore `.github/ci.yml.pending` → `.github/workflows/ci.yml` and push (section 28; rulesets already applied); tag v0 / npm publish / public write-up / dataset publish (still ask-first); M1 shop outreach deferred (Q2 synthetic-only 90d); bare hazaar deferred; N2 LLM/hybrid arms (need key); M4 LLM adapter deferred; voice adapter + consented WA-domain WER (out of Q3 v0).
+**Resolved:** N1/N3/N4; SPEC §7 ~101 proposed; adversary demotions; Q1/Q2/Q3/D1; M2 scaffold + proposer; Week-1/Week-2 stamps + gold 101 (sections 22–25); **owner-delegated bilingual pass** (section 26); **D5=CC-BY-4.0** (section 26); **M3 GO rules-only v0** (section 26); bill-amount attach polish; baseline silent 0/96; `npm test` 71; **M5 local scaffold + empty public GitHub repo** (section 27); **`main` pushed + rulesets applied; CI parked** (section 28).
 
 ## 11. Working agreements
 - Deterministic core; AI proposes, validator decides; zero silent errors as the goal.
@@ -464,19 +464,19 @@ Owner asked to unblock M5 push despite missing `workflow` OAuth scope (no npm pu
 
 ### Done
 - Parked CI: `.github/workflows/ci.yml` → `.github/ci.yml.pending` (outside `workflows/`).
-- Rewrote local history so no commit creates/updates `.github/workflows/` (required: GitHub rejects any push that touches that path without `workflow` scope; remote was empty so this was a normal first push, not `--force`).
-- Pushed `main` to `https://github.com/arsalan-arshad/urdu-business-nlu` (full project minus Actions workflow).
-- README + this section document the restore path.
-- Attempted `./scripts/apply-github-rulesets.sh` if API allowed; result recorded below / in punch list.
+- Rewrote local history so no commit creates/updates `.github/workflows/` (GitHub rejects any push that touches that path without `workflow` scope; remote was empty → normal first push, not `--force`).
+- Pushed `main` to https://github.com/arsalan-arshad/urdu-business-nlu (tip `9c51a37`; full project minus Actions workflow).
+- README notes the restore path.
+- **Rulesets applied** via `./scripts/apply-github-rulesets.sh` (admin API OK without `workflow` scope): `main` (PR + required check `test` + no force-push) and `version-tags` (`v*`).
 
-### Still pending (owner)
+### Still pending (owner) — CI only
 ```bash
 gh auth refresh -h github.com -s workflow
 mkdir -p .github/workflows && mv .github/ci.yml.pending .github/workflows/ci.yml
 git add .github && git commit -m "Restore CI workflow after workflow OAuth scope."
 git push
-./scripts/apply-github-rulesets.sh
 ```
+Note: rulesets already require status check `test`; until the workflow is restored and has run once, that check will not appear for PRs.
 
 ### Still ask-first
 - Tag v0, npm publish, separate dataset publish, LinkedIn/write-up, shop outreach.

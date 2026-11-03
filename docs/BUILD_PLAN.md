@@ -25,7 +25,8 @@
 
 ## M5 — Release (ask the owner first)
 - [x] Local create-repo prep: initial `main` commit, CI, OSS hygiene, README hosting + assets _(owner authorized 2026-11-04)_
-- [ ] Finish remote CI + rulesets: `gh auth refresh -h github.com -s workflow` → restore `.github/ci.yml.pending` → `.github/workflows/ci.yml` → push → `./scripts/apply-github-rulesets.sh` _(main pushed without workflows to unblock; CI + rulesets still pending)_
+- [x] Push `main` + apply main/tags rulesets _(2026-11-04; CI parked at `.github/ci.yml.pending`)_
+- [ ] Restore CI: `gh auth refresh -h github.com -s workflow` → `.github/ci.yml.pending` → `.github/workflows/ci.yml` → push
 - [ ] Tag v0, npm publish, post a short write-up; invite samples and reviews _(still ask-first; dataset not published separately despite D5=CC-BY-4.0)_
 
 ## M6 — Measure
