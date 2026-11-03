@@ -1,6 +1,6 @@
 {
   "name": "urdu-business-nlu",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Deterministic TypeScript library: informal Urdu / Roman-Urdu business messages to validated structured records. Rules-only v0 (M3 GO); no production accuracy claim outside eval reports.",
   "license": "MIT",
   "author": "Arsalan Arshad",
