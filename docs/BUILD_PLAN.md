@@ -24,7 +24,8 @@
 - [ ] Optional LLM adapter (integrator's key) — **deferred** without key; docs/README hygiene optional (M4-docs-only)
 
 ## M5 — Release (ask the owner first)
-- [x] Create the GitHub repo (public), push `main`, rulesets (main + tags), CI, README hosting note + assets _(owner authorized M5 create-repo 2026-11-04)_
+- [x] Local create-repo prep: initial `main` commit, CI, OSS hygiene, README hosting + assets _(owner authorized 2026-11-04)_
+- [ ] Finish remote: `gh auth refresh` → create/push public repo + apply main/tags rulesets _(blocked: invalid `gh` token)_
 - [ ] Tag v0, npm publish, post a short write-up; invite samples and reviews _(still ask-first; dataset not published separately despite D5=CC-BY-4.0)_
 
 ## M6 — Measure

@@ -1,6 +1,6 @@
 # Urdu Business NLU — Project Context (for Claude)
 
-_Snapshot: 2026-11-04 · **M5 create-repo** · public GitHub repo authorized; rules-only v0 **GO** (M3); gold silent-errors **0**/96 (101 gold); D5=**CC-BY-4.0** (not legal advice; no separate dataset publish); npm **not** published; `npm test` 71; CI + rulesets on create._
+_Snapshot: 2026-11-04 · **M5 create-repo (local done; GitHub push blocked on auth)** · owner authorized public repo; local `main` commit ready; `gh` token invalid — need owner `gh auth refresh`; rules-only v0 **GO**; D5=**CC-BY-4.0** (no separate dataset publish); npm **not** published; `npm test` 71; CI workflow staged._
 _Contains NO secrets. Never paste keys, real customer messages or phone numbers into chat or docs._
 
 ## 1. What this is
@@ -53,8 +53,8 @@ Public GitHub repo `urdu-business-nlu` (MIT) — created under owner account whe
 | **N4** | Privacy/legal: status of Pakistani data-protection rules for storing message samples; consent wording | Written checklist (not legal advice) |
 
 ## 10. Punch list
-**Open:** M5 remaining — tag v0 / npm publish / public write-up / dataset publish (still ask-first); M1 shop outreach deferred (Q2 synthetic-only 90d); bare hazaar deferred; N2 LLM/hybrid arms (need key); M4 LLM adapter deferred; voice adapter + consented WA-domain WER (out of Q3 v0).
-**Resolved:** N1/N3/N4; SPEC §7 ~101 proposed; adversary demotions; Q1/Q2/Q3/D1; M2 scaffold + proposer; Week-1/Week-2 stamps + gold 101 (sections 22–25); **owner-delegated bilingual pass** (section 26); **D5=CC-BY-4.0** (section 26); **M3 GO rules-only v0** (section 26); bill-amount attach polish; baseline silent 0/96; `npm test` 71; **M5 create GitHub repo** (section 27).
+**Open:** M5 finish — `gh auth refresh` then create/push repo + apply rulesets (section 27); tag v0 / npm publish / public write-up / dataset publish (still ask-first); M1 shop outreach deferred (Q2 synthetic-only 90d); bare hazaar deferred; N2 LLM/hybrid arms (need key); M4 LLM adapter deferred; voice adapter + consented WA-domain WER (out of Q3 v0).
+**Resolved:** N1/N3/N4; SPEC §7 ~101 proposed; adversary demotions; Q1/Q2/Q3/D1; M2 scaffold + proposer; Week-1/Week-2 stamps + gold 101 (sections 22–25); **owner-delegated bilingual pass** (section 26); **D5=CC-BY-4.0** (section 26); **M3 GO rules-only v0** (section 26); bill-amount attach polish; baseline silent 0/96; `npm test` 71; **M5 local scaffold + initial commit** (section 27).
 
 ## 11. Working agreements
 - Deterministic core; AI proposes, validator decides; zero silent errors as the goal.
@@ -424,13 +424,19 @@ Owner: **"I am okay and allowing to do on my behalf"** — act as owner-delegate
 
 Owner explicitly authorized **M5: create the open-source GitHub repo** (not npm publish / not separate dataset publish / not public write-up unless asked).
 
-### Done
+### Done (local)
 - README: hosting section (library + eval on GitHub/npm — **not** SaaS; no Railway/app hosting for core); honest M3 GO / silent-error / MIT / CC-BY-4.0-when-published / BYOK-later; no accuracy % marketing beyond eval report links.
 - Assets refreshed under `docs/assets/readme/`: `architecture-flow.svg`, `example-flow-card.svg`, `hero-dataflow-abstract.jpg`, `architecture-flow.mmd`.
 - OSS hygiene: `CODE_OF_CONDUCT.md`, updated `CONTRIBUTING.md` / `SECURITY.md`, `.github/workflows/ci.yml` (`npm test` + `npm run build`, `pull_request` only, `contents: read`).
 - `package.json` `repository` / `bugs` / `homepage` pointed at `arsalan-arshad/urdu-business-nlu`; **npm publish skipped**.
-- Git: initial commit on `main`; public repo create + push; rulesets for **main** (PR required, CI status check when available, no force-push) and **tags** (`v*` create restricted / no delete-force where supported).
-- BUILD_PLAN: M5 create-repo ticked; tag/npm/post remain open.
+- Git: initial commit on `main` (`6f3cb4f`); privacy-scan clean; `node_modules`/`dist`/`.env` gitignored.
+- BUILD_PLAN: M5 create-repo marked done for local work; remote still blocked.
+
+### Blocked — GitHub auth
+- `gh` account `arsalan-arshad`: token in keyring **invalid**. `gh repo create` → `Forbidden`.
+- **Owner next step:** run `gh auth refresh -h github.com` (scopes: `repo`, `workflow`), then:
+  1. `gh repo create urdu-business-nlu --public --source=. --remote=origin --push`
+  2. Apply rulesets via `scripts/apply-github-rulesets.sh` (main: PR + CI check `test` + no force-push; tags: `v*` restricted create / no delete-force).
 
 ### Still ask-first
 - Tag v0, npm publish, separate dataset publish, LinkedIn/write-up, shop outreach.
