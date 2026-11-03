@@ -14,6 +14,8 @@ _Abstract diagram only — not a product screenshot. No WhatsApp/Meta branding._
 
 This is an **npm/TypeScript library + eval set**, not a hosted SaaS. Source lives on **GitHub**; when the package is published, consumers install it with npm. There is **no Railway/app hosting** for the core product, and no always-on API in v0. An optional hosted API remains a possible later add-on and is out of scope for this release.
 
+**CI (pending):** GitHub Actions is not on `main` yet — the token lacked the `workflow` OAuth scope, so the workflow is parked at [`.github/ci.yml.pending`](.github/ci.yml.pending). After `gh auth refresh -h github.com -s workflow`, restore it to `.github/workflows/ci.yml`, push, then run `./scripts/apply-github-rulesets.sh`.
+
 ## What this is
 
 An open-source (**MIT**) TypeScript library plus an in-repo synthetic eval set (public dataset licence **CC-BY-4.0** when/if published separately — **not legal advice**; gold is in `eval/gold/**` today, not a separate data release) that turns informal Urdu, Roman-Urdu and mixed-English business messages (orders, payments, credit/udhaar, delivery) into **validated structured records**. A deterministic validator checks every number, unit and date; anything uncertain goes to human confirmation.
@@ -33,6 +35,7 @@ Source of truth: [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) · [`docs/SPEC.md`](
 | Spikes | [N1](docs/spikes/N1-2026-10-31.md) · [N3](docs/spikes/N3-2026-11-03.md) · [N4](docs/spikes/N4-2026-10-31.md); N2 LLM/hybrid arms deferred (no key) |
 | Gold | **101** `owner_confirmed` in [`eval/gold/`](eval/gold/); synthetic placeholders only |
 | LLM | Optional BYOK adapter — **later** (M4 deferred) |
+| CI | **Pending** — restore `.github/ci.yml.pending` → `.github/workflows/ci.yml` after `gh auth refresh -h github.com -s workflow` |
 
 ## Install / commands (local)
 
