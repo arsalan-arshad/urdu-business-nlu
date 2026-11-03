@@ -1,0 +1,46 @@
+{
+  "name": "urdu-business-nlu",
+  "version": "0.0.1",
+  "description": "Deterministic TypeScript library: informal Urdu / Roman-Urdu business messages to validated structured records. Rules-only v0 (M3 GO); no production accuracy claim outside eval reports.",
+  "license": "MIT",
+  "author": "Arsalan Arshad",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arsalan-arshad/urdu-business-nlu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arsalan-arshad/urdu-business-nlu/issues"
+  },
+  "homepage": "https://github.com/arsalan-arshad/urdu-business-nlu#readme",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "baseline:proposed": "npm run build && node scripts/rules-only-proposed-baseline.mjs",
+    "baseline:gold": "npm run build && node scripts/rules-only-gold-baseline.mjs",
+    "review:week1": "node scripts/review-week1.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  }
+}

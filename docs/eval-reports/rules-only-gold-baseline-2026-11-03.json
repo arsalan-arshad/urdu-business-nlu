@@ -1,0 +1,63 @@
+{
+  "label": "owner_confirmed gold + owner-delegated bilingual 2026-11-04 — NOT a production accuracy marketing claim; cite this report for numbers",
+  "date": "2026-11-04",
+  "arm": "rules-only",
+  "llm_arm": "skipped (no .env API key)",
+  "gold_examples": 101,
+  "scored_excl_us_script": 96,
+  "route_distribution_pred": {
+    "auto": 35,
+    "confirm": 61,
+    "reject": 0
+  },
+  "field_match_counts": {
+    "intent": 92,
+    "item": 93,
+    "qty": 94,
+    "unit": 93,
+    "amount": 95,
+    "date": 96,
+    "route": 96
+  },
+  "field_mismatch_counts": {
+    "intent": 4,
+    "item": 3,
+    "qty": 2,
+    "unit": 3,
+    "amount": 1,
+    "date": 0,
+    "route": 0
+  },
+  "silent_error_count": 0,
+  "silent_errors": [],
+  "top_failure_modes": [
+    {
+      "mode": "item mismatch",
+      "count": 3
+    },
+    {
+      "mode": "unit mismatch",
+      "count": 3
+    },
+    {
+      "mode": "intent payment→null",
+      "count": 2
+    },
+    {
+      "mode": "qty mismatch",
+      "count": 2
+    },
+    {
+      "mode": "intent null→credit",
+      "count": 1
+    },
+    {
+      "mode": "amount mismatch",
+      "count": 1
+    },
+    {
+      "mode": "intent inquiry→order",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+---
+description: Honesty rules for README, SPEC, PROJECT_CONTEXT and any public-facing text
+globs: README.md, docs/**/*.md, PROJECT_CONTEXT.md, BUILD_PLAN.md, CONTRIBUTING.md
+alwaysApply: false
+---
+
+# Docs honesty
+
+- Every claim about behaviour, accuracy or coverage must be backed by code that exists or an eval report that was generated. Otherwise it goes in the roadmap as unchecked.
+- No accuracy numbers anywhere except copied from a versioned eval report, with the report path and version.
+- Platform, legal and ASR-benchmark statements cite a primary source (official docs, paper, regulator text) with URL and access date. Vendor blogs and self-reported LinkedIn traction are labelled as such and never used as a basis.
+- Keep the "Honest read" section of `PROJECT_CONTEXT.md` honest: if evidence shows the gap is already filled, say so plainly.
+- `PROJECT_CONTEXT.md` is append-only with numbered sections. Add a new section per session; mark superseded items explicitly ("superseded by section N"). Update the snapshot header and punch list. No secrets, no real messages, no phone numbers.
+- Linguistic examples in docs carry "needs native-speaker review" until the owner confirms.
+- Badges only for things that exist. No "Deploy" buttons. No banner claims.
+- One contact email: arsalanarshad.dev@gmail.com.

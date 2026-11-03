@@ -1,0 +1,16 @@
+---
+description: Git, PR, CI and release conventions from the Open-Source App Playbook. Use when committing, opening PRs, editing CI or releasing
+alwaysApply: false
+---
+
+# Git, CI and release
+
+- Branches: `feat/<short>` or `fix/<short>`. Commits: imperative mood, explain root cause and fix, not just "fix bug".
+- Never push to `main`, force-push, tag, release or publish without the owner asking. Creating the GitHub repo happens only when the owner says so (milestone M5).
+- Never edit git config (global or local). A one-off `git -c user.name=... -c user.email=...` override is acceptable only if no identity is configured.
+- CI (when it exists): `pull_request` trigger only (never `pull_request_target`), `permissions: contents: read`, and it gates only on checks that actually run. Do not claim lint if lint is not wired.
+- Release workflow follows the Playbook section 10 (tag must match `package.json` version, build must pass, notes auto-generated). Do not add it before M5.
+- `.gitignore` must cover `node_modules`, `.env`, build output, local databases, editor and OS files. Confirm `.env` is ignored before the first push.
+- Before merging anything AI-written, review the real diff, not the summary. Before writing a PR description, re-read the diff.
+- After a merge, verify CI logs. Do not declare "fixed" without evidence.
+- Branch protection on `main`: PR required, CI required, 1 approval, owner bypass allowed, no force pushes.

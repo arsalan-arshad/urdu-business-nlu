@@ -1,0 +1,1 @@
+../cursor-pack/scripts/privacy-scan.sh

@@ -1,0 +1,6 @@
+flowchart LR
+  M["Message text"] --> P["Propose candidate\n(rules-only · LLM* later)"]
+  P --> V["Deterministic validator"]
+  V -->|grounded + clear| A["auto"]
+  V -->|uncertain| C["confirm"]
+  V -->|ungrounded number| R["reject"]

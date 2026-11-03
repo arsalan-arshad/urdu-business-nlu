@@ -1,0 +1,25 @@
+---
+description: Rules for gold examples, eval data, fixtures and any Urdu or Roman-Urdu text
+globs: eval/**, test/fixtures/**, **/*.jsonl
+alwaysApply: false
+---
+
+# Linguistics and data
+
+- Sample format (JSONL, one object per line):
+  `{ id, text, lang_mix, source, gold, review_status, reviewed_by, reviewed_on, notes }`
+  - `source`: `synthetic`, `synthetic_contributed`, or `contributed` only.
+    - `synthetic` — agent/owner-invented examples.
+    - `synthetic_contributed` — invented examples from outreach (option B); not real chats.
+    - `contributed` — anonymised real messages only with consent + D5 (option C).
+  - `lang_mix`: e.g. `roman_urdu`, `urdu_script`, `roman_urdu_english`.
+  - `review_status`: `needs_native_review` by default. Only the owner sets `owner_confirmed`.
+  - `reviewed_by`: reviewer **role** only (e.g. `owner-self`, `paid-annotator`, `uni-lab`, `bilingual-friend`) — no real names.
+  - `reviewed_on`: review date (ISO `YYYY-MM-DD`) when a human review is recorded; omit or null until reviewed.
+- Never invent linguistic facts. If a meaning, spelling variant or dialect usage is uncertain, set the note to `unsure: <what and why>` and keep `needs_native_review`.
+- Known ambiguity to cover on purpose: "kal" (yesterday or tomorrow), missing item, missing currency or direction, fractions (aadha, sawa, derh, dhai, paune), pack sizes, typos, code-mixing, Urdu-script equivalents.
+- Every message uses placeholders: `PARTY_A`, `PHONE_1`, `SHOP_1`. No real names, numbers, addresses, CNICs.
+- Contributed samples need a recorded consent reference and a removal path (see `docs/DATA_AND_PRIVACY.md`). No consent record, no sample. `synthetic_contributed` still must not contain real chats or personal data.
+- Synthetic variation must be controlled: change one factor at a time (spelling, digit script, word order, unit) and record which in `notes`.
+- Do not edit `eval/gold/**` to make code pass. New examples go to `eval/proposed/`.
+- No audio files, ever. No scraped text. If the source of an example is unclear, drop it.

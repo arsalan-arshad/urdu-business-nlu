@@ -1,0 +1,75 @@
+{
+  "label": "proposed/unconfirmed — NOT M3 go/no-go until owner_confirmed gold exists",
+  "date": "2026-11-03",
+  "arm": "rules-only",
+  "llm_arm": "skipped (no .env API key)",
+  "total_proposed_files_examples": 101,
+  "scored_excl_us_script": 96,
+  "route_distribution_pred": {
+    "auto": 37,
+    "confirm": 59,
+    "reject": 0
+  },
+  "field_match_counts": {
+    "intent": 91,
+    "item": 90,
+    "qty": 95,
+    "unit": 93,
+    "amount": 92,
+    "date": 96,
+    "route": 88
+  },
+  "field_mismatch_counts": {
+    "intent": 5,
+    "item": 6,
+    "qty": 1,
+    "unit": 3,
+    "amount": 4,
+    "date": 0,
+    "route": 8
+  },
+  "silent_error_count": 0,
+  "silent_errors": [],
+  "top_failure_modes": [
+    {
+      "mode": "route confirm→auto",
+      "count": 6
+    },
+    {
+      "mode": "item mismatch",
+      "count": 6
+    },
+    {
+      "mode": "amount mismatch",
+      "count": 4
+    },
+    {
+      "mode": "unit mismatch",
+      "count": 3
+    },
+    {
+      "mode": "intent payment→null",
+      "count": 2
+    },
+    {
+      "mode": "route auto→confirm",
+      "count": 2
+    },
+    {
+      "mode": "intent inquiry→payment",
+      "count": 1
+    },
+    {
+      "mode": "intent null→credit",
+      "count": 1
+    },
+    {
+      "mode": "qty mismatch",
+      "count": 1
+    },
+    {
+      "mode": "intent inquiry→order",
+      "count": 1
+    }
+  ]
+}
