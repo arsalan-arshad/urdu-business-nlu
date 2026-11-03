@@ -1,6 +1,6 @@
 # Urdu Business NLU — Project Context (for Claude)
 
-_Snapshot: 2026-11-04 · **M5 push done (CI parked)** · `main` on GitHub without Actions workflow; `.github/ci.yml.pending` ready; **rulesets applied** (main + version-tags); restore CI after `gh auth refresh -s workflow`; npm **not** published; rules-only v0 **GO**; D5=**CC-BY-4.0**; `npm test` 71._
+_Snapshot: 2026-11-04 · **v0.1.0 released (CI still parked)** · GitHub About set; tag/release [v0.1.0](https://github.com/arsalan-arshad/urdu-business-nlu/releases/tag/v0.1.0) matches `package.json`; npm **not** published; `.github/ci.yml.pending` until `gh auth refresh -s workflow`; rulesets applied; rules-only v0 **GO**; D5=**CC-BY-4.0**; `npm test` 71._
 _Contains NO secrets. Never paste keys, real customer messages or phone numbers into chat or docs._
 
 ## 1. What this is
@@ -53,8 +53,8 @@ Public GitHub repo `urdu-business-nlu` (MIT) — created under owner account whe
 | **N4** | Privacy/legal: status of Pakistani data-protection rules for storing message samples; consent wording | Written checklist (not legal advice) |
 
 ## 10. Punch list
-**Open:** M5 CI restore — owner `gh auth refresh -h github.com -s workflow`, then restore `.github/ci.yml.pending` → `.github/workflows/ci.yml` and push (section 28; rulesets already applied); tag v0 / npm publish / public write-up / dataset publish (still ask-first); M1 shop outreach deferred (Q2 synthetic-only 90d); bare hazaar deferred; N2 LLM/hybrid arms (need key); M4 LLM adapter deferred; voice adapter + consented WA-domain WER (out of Q3 v0).
-**Resolved:** N1/N3/N4; SPEC §7 ~101 proposed; adversary demotions; Q1/Q2/Q3/D1; M2 scaffold + proposer; Week-1/Week-2 stamps + gold 101 (sections 22–25); **owner-delegated bilingual pass** (section 26); **D5=CC-BY-4.0** (section 26); **M3 GO rules-only v0** (section 26); bill-amount attach polish; baseline silent 0/96; `npm test` 71; **M5 local scaffold + empty public GitHub repo** (section 27); **`main` pushed + rulesets applied; CI parked** (section 28).
+**Open:** M5 CI restore — owner `gh auth refresh -h github.com -s workflow`, then restore `.github/ci.yml.pending` → `.github/workflows/ci.yml` and push (sections 28–29; rulesets already applied; required check `test` will stay missing until then); npm publish / public write-up / dataset publish (still ask-first); M1 shop outreach deferred (Q2 synthetic-only 90d); bare hazaar deferred; N2 LLM/hybrid arms (need key); M4 LLM adapter deferred; voice adapter + consented WA-domain WER (out of Q3 v0).
+**Resolved:** N1/N3/N4; SPEC §7 ~101 proposed; adversary demotions; Q1/Q2/Q3/D1; M2 scaffold + proposer; Week-1/Week-2 stamps + gold 101 (sections 22–25); **owner-delegated bilingual pass** (section 26); **D5=CC-BY-4.0** (section 26); **M3 GO rules-only v0** (section 26); bill-amount attach polish; baseline silent 0/96; `npm test` 71; **M5 local scaffold + empty public GitHub repo** (section 27); **`main` pushed + rulesets applied; CI parked** (section 28); **About + v0.1.0 tag/release** (section 29; npm still unpublished).
 
 ## 11. Working agreements
 - Deterministic core; AI proposes, validator decides; zero silent errors as the goal.
@@ -415,10 +415,10 @@ Owner: **"I am okay and allowing to do on my behalf"** — act as owner-delegate
 - `npm run baseline:gold` → silent **0 / 96** (refreshed).
 
 ### Still needs explicit owner
-- **M5:** ~~create GitHub remote~~ (done — section 27) / tag / write-up / npm publish / dataset publish / public contact.
+- **M5:** ~~create GitHub remote~~ (done — section 27) / ~~tag~~ (done — section 29: `v0.1.0`) / write-up / npm publish / dataset publish / public contact / **CI restore** (section 29).
 - Optional: BYOK for LLM arm eval; shop outreach after Q2 window; bare hazaar; counsel on D5 before first public data drop.
 
-**Supersedes:** section 25 “Still open” bilingual/D5/M3 blockers; §7 D5 deferred; punch-list bilingual/D5/M3 opens. _(M5 create-repo: see section 27.)_
+**Supersedes:** section 25 “Still open” bilingual/D5/M3 blockers; §7 D5 deferred; punch-list bilingual/D5/M3 opens. _(M5 create-repo: see section 27. Tag: see section 29.)_
 
 ## 27. Session update: M5 create GitHub repo (2026-11-04)
 
@@ -479,6 +479,39 @@ git push
 Note: rulesets already require status check `test`; until the workflow is restored and has run once, that check will not appear for PRs.
 
 ### Still ask-first
-- Tag v0, npm publish, separate dataset publish, LinkedIn/write-up, shop outreach.
+- ~~Tag v0~~ (done — section 29: `v0.1.0`), npm publish, separate dataset publish, LinkedIn/write-up, shop outreach.
 
 **Supersedes:** section 27 “Blocked — push needs workflow scope” / empty-remote punch-list wording.
+
+## 29. Session update: About + v0.1.0 release without workflows (2026-11-04)
+
+Owner asked to finish everything that does **not** require pushing `.github/workflows/` (token scopes still `gist`, `read:org`, `repo` — **no `workflow`**).
+
+### Done
+- **GitHub About** (`gh repo edit` / topics API):
+  - Description: Deterministic TypeScript library: informal Urdu / Roman-Urdu business messages → validated structured records. Rules-only v0 (M3 GO). No production accuracy claim outside eval reports.
+  - Homepage: `https://github.com/arsalan-arshad/urdu-business-nlu#readme`
+  - Topics: `urdu`, `roman-urdu`, `nlu`, `typescript`, `pakistan`, `natural-language-understanding`, `whatsapp`, `mit-license`, `eval`, `business-messages`
+- Bumped `package.json` / `package-lock.json` to **0.1.0**; committed (`9b1b88c`); pushed to `main` (owner bypass of PR + required-check ruleset; **no** `workflows/` files touched).
+- Annotated tag **`v0.1.0`** pushed (version-tags ruleset bypassed by owner).
+- Release: https://github.com/arsalan-arshad/urdu-business-nlu/releases/tag/v0.1.0 — honest notes (M3 GO rules-only; npm not published; CI pending).
+- **npm not published.**
+
+### Still pending (owner) — CI only
+Do **not** add/push `.github/workflows/ci.yml` until workflow OAuth scope exists:
+
+```bash
+gh auth refresh -h github.com -s workflow
+mkdir -p .github/workflows && mv .github/ci.yml.pending .github/workflows/ci.yml
+git add .github && git commit -m "Restore CI workflow after workflow OAuth scope."
+git push
+```
+
+Until then: required status check `test` cannot run; CI remains parked at `.github/ci.yml.pending`.
+
+### Still ask-first
+- npm publish, separate dataset publish, LinkedIn/write-up, shop outreach.
+
+**Evidence:** `gh api repos/...` About fields; release URL above; local tag `v0.1.0` on commit with `package.json` 0.1.0; scopes still lack `workflow`.
+
+**Supersedes:** section 28 “Still ask-first — Tag v0”; punch-list tag open.
