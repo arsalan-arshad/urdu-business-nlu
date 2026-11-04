@@ -12,7 +12,7 @@ _Abstract diagram only — not a product screenshot. No WhatsApp/Meta branding._
 
 This is an **npm/TypeScript library + eval set**, not a hosted SaaS. Source lives on **GitHub**; when the package is published, consumers install it with npm. There is **no Railway/app hosting** for the core product, and no always-on API in v0. An optional hosted API remains a possible later add-on and is out of scope for this release.
 
-**CI (pending):** GitHub Actions is not on `main` yet — the token lacked the `workflow` OAuth scope, so the workflow is parked at [`.github/ci.yml.pending`](.github/ci.yml.pending). Branch/tag rulesets are already applied. After `gh auth refresh -h github.com -s workflow`, restore the file to `.github/workflows/ci.yml` and push.
+**CI:** GitHub Actions runs on pull requests via [`.github/workflows/ci.yml`](.github/workflows/ci.yml) (`npm ci` → `npm test` → `npm run build`). Branch/tag rulesets are applied.
 
 ## What this is
 
@@ -28,30 +28,32 @@ Source of truth: [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) · [`docs/SPEC.md`](
 |---|---|
 | Hypothesis | Unvalidated — builders may lack an open, tested Urdu/Roman-Urdu business-message parser + eval |
 | Library | **M3 GO** rules-only v0 — `src/` normalisers + `propose`/`extract` + `validateRecord` + `route` |
-| npm publish | **Not published** (install from source / local `npm install` for now) |
+| npm publish | **`urdu-business-nlu@0.1.0`** on [npm](https://www.npmjs.com/package/urdu-business-nlu) |
 | Eval decision | [M3 go/no-go](docs/eval-reports/M3-go-no-go-2026-11-04.md) · [gold baseline](docs/eval-reports/rules-only-gold-baseline-2026-11-03.md) — cite reports; **no marketing accuracy %** |
 | Spikes | [N1](docs/spikes/N1-2026-10-31.md) · [N3](docs/spikes/N3-2026-11-03.md) · [N4](docs/spikes/N4-2026-10-31.md); N2 LLM/hybrid arms deferred (no key) |
 | Gold | **101** `owner_confirmed` in [`eval/gold/`](eval/gold/); synthetic placeholders only |
 | LLM | Optional BYOK adapter — **later** (M4 deferred) |
-| CI | **Pending** — restore `.github/ci.yml.pending` → `.github/workflows/ci.yml` after `gh auth refresh -h github.com -s workflow` |
+| CI | **Live** — [`.github/workflows/ci.yml`](.github/workflows/ci.yml) on `pull_request` |
 
 ## Install
 
-**Not on the npm registry yet.** Install from GitHub or from a local clone:
+```bash
+npm i urdu-business-nlu
+```
+
+Requires Node **>= 18**. From source (develop / contribute):
 
 ```bash
-# Consumer install (GitHub)
+# From GitHub
 npm install github:arsalan-arshad/urdu-business-nlu
 
-# Local clone (develop / contribute)
+# Local clone
 git clone https://github.com/arsalan-arshad/urdu-business-nlu.git
 cd urdu-business-nlu
 npm install
 npm test
 npm run build
 ```
-
-Requires Node **>= 18**. When/if the package is published to npm, `npm install urdu-business-nlu` will work; until then use the GitHub or local path above.
 
 More detail: [`docs/USAGE.md`](docs/USAGE.md).
 

@@ -2,12 +2,16 @@
 
 Install and quickstart live in the root [`README.md`](../README.md) (**Install** and **Usage** sections). This page expands the same API without repeating marketing claims.
 
-## Install (honest)
-
-The package is **not** published to the npm registry yet. Use one of:
+## Install
 
 ```bash
-# From GitHub (consumers)
+npm i urdu-business-nlu
+```
+
+From source (develop / contribute):
+
+```bash
+# From GitHub
 npm install github:arsalan-arshad/urdu-business-nlu
 
 # Or clone and develop locally
@@ -18,7 +22,7 @@ npm test
 npm run build
 ```
 
-Node **>= 18**. After `npm run build`, imports resolve from `dist/` (see `package.json` `exports`).
+Node **>= 18**. After `npm run build` on a clone, imports resolve from `dist/` (see `package.json` `exports`).
 
 ## API (from `src/index.ts`)
 

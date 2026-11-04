@@ -1,6 +1,6 @@
 # Urdu Business NLU — Project Context (for Claude)
 
-_Snapshot: 2026-11-04 · **README install/usage + fixed example SVG** · Install docs live in `README.md` + `docs/USAGE.md` (GitHub/`github:` install; npm registry still unpublished); `example-flow-card.svg` re-encoded UTF-8 (Latin-1 middots broke GitHub render); CI still parked; v0.1.0 tag; rules-only v0 **GO**; `npm test` 71._
+_Snapshot: 2026-11-05 · **M5 CI + npm live** · `urdu-business-nlu@0.1.0` on npm; CI restored on `main` (PR #1, Actions run success); README/USAGE lead with `npm i urdu-business-nlu`; write-up + dataset publish still ask-first; v0.1.0 tag._
 _Contains NO secrets. Never paste keys, real customer messages or phone numbers into chat or docs._
 
 ## 1. What this is
@@ -53,8 +53,8 @@ Public GitHub repo `urdu-business-nlu` (MIT) — created under owner account whe
 | **N4** | Privacy/legal: status of Pakistani data-protection rules for storing message samples; consent wording | Written checklist (not legal advice) |
 
 ## 10. Punch list
-**Open:** M5 CI restore — owner `gh auth refresh -h github.com -s workflow`, then restore `.github/ci.yml.pending` → `.github/workflows/ci.yml` and push (sections 28–29; rulesets already applied; required check `test` will stay missing until then); npm publish / public write-up / dataset publish (still ask-first); M1 shop outreach deferred (Q2 synthetic-only 90d); bare hazaar deferred; N2 LLM/hybrid arms (need key); M4 LLM adapter deferred; voice adapter + consented WA-domain WER (out of Q3 v0).
-**Resolved:** N1/N3/N4; SPEC §7 ~101 proposed; adversary demotions; Q1/Q2/Q3/D1; M2 scaffold + proposer; Week-1/Week-2 stamps + gold 101 (sections 22–25); **owner-delegated bilingual pass** (section 26); **D5=CC-BY-4.0** (section 26); **M3 GO rules-only v0** (section 26); bill-amount attach polish; baseline silent 0/96; `npm test` 71; **M5 local scaffold + empty public GitHub repo** (section 27); **`main` pushed + rulesets applied; CI parked** (section 28); **About + v0.1.0 tag/release** (section 29; npm still unpublished); **README Install/Usage + UTF-8 example SVG + `docs/USAGE.md`** (section 30).
+**Open:** public write-up / dataset publish (still ask-first); M1 shop outreach deferred (Q2 synthetic-only 90d); bare hazaar deferred; N2 LLM/hybrid arms (need key); M4 LLM adapter deferred; voice adapter + consented WA-domain WER (out of Q3 v0).
+**Resolved:** N1/N3/N4; SPEC §7 ~101 proposed; adversary demotions; Q1/Q2/Q3/D1; M2 scaffold + proposer; Week-1/Week-2 stamps + gold 101 (sections 22–25); **owner-delegated bilingual pass** (section 26); **D5=CC-BY-4.0** (section 26); **M3 GO rules-only v0** (section 26); bill-amount attach polish; baseline silent 0/96; `npm test` 71; **M5 local scaffold + empty public GitHub repo** (section 27); **`main` pushed + rulesets applied** (section 28); **About + v0.1.0 tag/release** (section 29); **README Install/Usage + UTF-8 example SVG + `docs/USAGE.md`** (section 30); **owner authorized CI + npm** (section 31); **CI restored + `urdu-business-nlu@0.1.0` published** (section 32).
 
 ## 11. Working agreements
 - Deterministic core; AI proposes, validator decides; zero silent errors as the goal.
@@ -510,11 +510,11 @@ git push
 Until then: required status check `test` cannot run; CI remains parked at `.github/ci.yml.pending`.
 
 ### Still ask-first
-- npm publish, separate dataset publish, LinkedIn/write-up, shop outreach.
+- ~~npm publish~~ (done 2026-11-05 — section 32), separate dataset publish, LinkedIn/write-up, shop outreach.
 
 **Evidence:** `gh api repos/...` About fields; release URL above; local tag `v0.1.0` on commit with `package.json` 0.1.0; scopes still lack `workflow`.
 
-**Supersedes:** section 28 “Still ask-first — Tag v0”; punch-list tag open.
+**Supersedes:** section 28 “Still ask-first — Tag v0”; punch-list tag open. _(npm authorize/auth-block: section 31.)_
 
 ## 30. Session update: README install docs + fix broken example SVG (2026-11-04)
 
@@ -535,3 +535,60 @@ Owner reported broken README image (“Synthetic example input to confirm route�
 - Extra: `docs/USAGE.md`
 
 **Evidence:** local UTF-8 decode of `example-flow-card.svg`; README sections; `docs/USAGE.md`.
+
+## 31. Session update: Owner authorized CI + npm publish — blocked on auth (2026-11-05)
+
+Owner explicitly authorized remaining items **(1) restore GitHub Actions CI** and **(2) npm publish** for `urdu-business-nlu@0.1.0`.
+
+### Checked
+- `package.json`: name `urdu-business-nlu`, version `0.1.0`, `files: ["dist","LICENSE","README.md"]`, `main`/`exports` → `./dist/*`, license MIT — publishable layout OK once built.
+- CI still parked: `.github/ci.yml.pending` (no `.github/workflows/` yet).
+- Registry: `urdu-business-nlu` **404** (not published).
+
+### Blockers (no secrets printed; no tokens invented)
+1. **GitHub:** `gh auth status` → account `arsalan-arshad` active but **keyring token invalid**. Ran `gh auth refresh -h github.com -s repo,workflow` once → **device flow** (`https://github.com/login/device` + one-time code). Failed fast; hung refresh killed. Cannot move/commit/push workflow or confirm Actions run until owner completes browser auth.
+2. **npm:** `npm whoami` → **ENEEDAUTH**. Need interactive `npm login` (or `npm adduser`) on this machine before `npm run build` + `npm publish --access public`.
+
+### Not done (waiting on owner)
+- Move `.github/ci.yml.pending` → `.github/workflows/ci.yml`, commit, push/PR, confirm Actions.
+- `npm publish`; README install prefer `npm i urdu-business-nlu` (GitHub fallback).
+
+### Owner unblock
+```bash
+# Terminal 1 — GitHub (complete browser device flow)
+gh auth refresh -h github.com -s repo,workflow
+gh auth status   # confirm workflow scope
+
+# Terminal 2 — npm
+npm login
+npm whoami
+```
+Then re-ask agent to finish CI restore + publish.
+
+**Supersedes:** punch-list “npm publish still ask-first” authorization (publish now owner-ok; **auth** still blocking). Does **not** supersede “no dataset publish / no write-up” ask-first.
+
+_Superseded by section 32 (CI restored + npm published)._
+
+## 32. Session update: npm 0.1.0 published + CI live — docs finish (2026-11-05)
+
+Owner said **done** after OTP for `npm publish`. Verified and finished remaining docs.
+
+### Verified
+- `npm view urdu-business-nlu version` → **0.1.0** (registry: https://www.npmjs.com/package/urdu-business-nlu).
+- CI already restored earlier: [PR #1](https://github.com/arsalan-arshad/urdu-business-nlu/pull/1) merged; `.github/workflows/ci.yml` on `main`; no `.github/ci.yml.pending`.
+- Actions: workflow **active**; run [41915323145](https://github.com/arsalan-arshad/urdu-business-nlu/actions/runs/41915323145) on `feat/restore-ci` / `pull_request` → **success**.
+
+### Done this session
+- README **Install** leads with `npm i urdu-business-nlu` (GitHub/local as secondary); Hosting no longer claims CI pending; Status table npm + CI live.
+- `docs/USAGE.md` same install lead.
+- `docs/BUILD_PLAN.md` M5: CI restore + npm publish checked.
+- Local `gh` still reports invalid keyring token (Forbidden for `gh run list`); confirmation used public GitHub API + existing merge on `main`. Git push credentials OK.
+
+### Still ask-first
+- LinkedIn/write-up, separate dataset publish, shop outreach.
+
+**Evidence:** `npm view`; Actions run URL above; PR #1; files on `main` for `.github/workflows/ci.yml`.
+
+**Evidence (agent finish):** `npm test` 71 + `npm run build` before publish; interactive npm web 2FA (no secrets recorded); `npm view` → 0.1.0.
+
+**Supersedes:** section 31 auth blockers; punch-list CI/npm open items.

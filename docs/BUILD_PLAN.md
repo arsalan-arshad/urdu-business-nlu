@@ -25,9 +25,11 @@
 
 ## M5 — Release (ask the owner first)
 - [x] Local create-repo prep: initial `main` commit, CI, OSS hygiene, README hosting + assets _(owner authorized 2026-11-04)_
-- [x] Push `main` + apply main/tags rulesets _(2026-11-04; CI parked at `.github/ci.yml.pending`)_
-- [ ] Restore CI: `gh auth refresh -h github.com -s workflow` → `.github/ci.yml.pending` → `.github/workflows/ci.yml` → push
-- [ ] Tag v0, npm publish, post a short write-up; invite samples and reviews _(still ask-first; dataset not published separately despite D5=CC-BY-4.0)_
+- [x] Push `main` + apply main/tags rulesets _(2026-11-04; CI briefly parked then restored)_
+- [x] Restore CI: `.github/workflows/ci.yml` on `main` via [PR #1](https://github.com/arsalan-arshad/urdu-business-nlu/pull/1); Actions run [41915323145](https://github.com/arsalan-arshad/urdu-business-nlu/actions/runs/41915323145) **success** (PROJECT_CONTEXT §32)
+- [x] Tag v0 (`v0.1.0` — section 29)
+- [x] npm publish (`urdu-business-nlu@0.1.0`) — [npm package](https://www.npmjs.com/package/urdu-business-nlu) (PROJECT_CONTEXT §32)
+- [ ] Post a short write-up; invite samples and reviews _(still ask-first; dataset not published separately despite D5=CC-BY-4.0)_
 
 ## M6 — Measure
 - [ ] Track the 60-day gate in `PROJECT_CONTEXT.md` _(Q3 portfolio tweak: do not treat star counts as portfolio pass/fail)_
