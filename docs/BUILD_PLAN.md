@@ -6,7 +6,7 @@
 - [x] N4 privacy/legal checklist and consent text
 - [x] Answer Q1–Q3 in `PROJECT_CONTEXT.md` _(owner confirmed 2026-11-03 — section 18: Q1=owner-self schedule; Q2=synthetic-only 90d no outreach; Q3=portfolio OSS 6 h/wk. Native review itself **not** done.)_
 - [x] Decide D1 (language) — **TypeScript** (owner confirmed 2026-11-03 — section 18); Python for data/eval scripts only
-- [x] Decide D5 (data licence) — **CC-BY-4.0** for public synthetic eval when/if published; code remains MIT; **not legal advice**; **no dataset publish yet** (M5 ask-first). See `docs/decisions/RESEARCH_DEFAULTS-2026-11-03.md`
+- [x] Decide D5 (data licence) — **CC-BY-4.0** for public synthetic eval; code remains MIT; **not legal advice**; published as `v0.1.0-dataset` + `docs/DATASET.md` (2026-11-05). See `docs/decisions/RESEARCH_DEFAULTS-2026-11-03.md`
 
 ## M1 — Gold set
 - [x] 50+ synthetic proposed drafted (~101 in `eval/proposed/`); owner-self + owner-delegated bilingual pass 2026-11-04 — **101** `owner_confirmed` in `eval/gold/**`. **0** `needs_native_review` left. Bilingual pass OK (guessy ≪ 20%); no production field-accuracy marketing claim without citing eval report.
@@ -29,7 +29,9 @@
 - [x] Restore CI: `.github/workflows/ci.yml` on `main` via [PR #1](https://github.com/arsalan-arshad/urdu-business-nlu/pull/1); Actions run [41915323145](https://github.com/arsalan-arshad/urdu-business-nlu/actions/runs/41915323145) **success** (PROJECT_CONTEXT §32)
 - [x] Tag v0 (`v0.1.0` — section 29)
 - [x] npm publish (`urdu-business-nlu@0.1.0`) — [npm package](https://www.npmjs.com/package/urdu-business-nlu) (PROJECT_CONTEXT §32)
-- [ ] Post a short write-up; invite samples and reviews _(still ask-first; dataset not published separately despite D5=CC-BY-4.0)_
+- [x] Dataset publish: `docs/DATASET.md` + `v0.1.0-dataset` release archive (HF deferred)
+- [x] Draft public write-up (LinkedIn + short note in `docs/announcements/`) — **draft for owner paste**; not auto-posted
+- [ ] Owner posts LinkedIn / invites samples and reviews (paste from drafts)
 
 ## M6 — Measure
 - [ ] Track the 60-day gate in `PROJECT_CONTEXT.md` _(Q3 portfolio tweak: do not treat star counts as portfolio pass/fail)_

@@ -1,6 +1,6 @@
 # Urdu Business NLU — Project Context (for Claude)
 
-_Snapshot: 2026-11-05 · **M5 CI + npm live** · `urdu-business-nlu@0.1.0` on npm; CI restored on `main` (PR #1, Actions run success); README/USAGE lead with `npm i urdu-business-nlu`; write-up + dataset publish still ask-first; v0.1.0 tag._
+_Snapshot: 2026-11-05 · **M5 dataset + write-up drafts** · `urdu-business-nlu@0.1.0` on npm; CI live; eval gold published as `v0.1.0-dataset` (CC-BY-4.0); LinkedIn/write-up drafts in `docs/announcements/` (not auto-posted); shop outreach still ask-first._
 _Contains NO secrets. Never paste keys, real customer messages or phone numbers into chat or docs._
 
 ## 1. What this is
@@ -37,7 +37,7 @@ Public GitHub repo `urdu-business-nlu` (MIT) — created under owner account whe
 - **D2 — v0 scope:** typed Roman-Urdu text first; Urdu script second; voice later through an ASR adapter. _(Q3 portfolio plan: v0 = typed Roman-Urdu; do not build Urdu-script **parsing** in v0 — keep proposed `us-*` examples; section 18.)_
 - **D3 — LLM role:** optional extraction adapter, key supplied by the integrator (BYOK). The rules-only baseline must work offline.
 - **D4 — Dataset sourcing:** synthetic plus consented, anonymised contributions; never scraped chats. _(Q2 owner confirmed: **synthetic-only 90 days**, no outreach; revisit B after M2 baseline — section 18.)_
-- **D5 — Dataset licence:** code is **MIT**; public synthetic eval **CC-BY-4.0** when/if published — **locked 2026-11-04** (owner-delegated Accept of research recommendation; **not legal advice**). **No dataset publish yet** (M5 ask-first). _(Supersedes deferred wording from section 18. D5 is the public **eval dataset** licence, not the library code licence.)_
+- **D5 — Dataset licence:** code is **MIT**; public synthetic eval **CC-BY-4.0** — **locked 2026-11-04**; **published 2026-11-05** as GitHub release `v0.1.0-dataset` + [`docs/DATASET.md`](docs/DATASET.md) (owner authorized; **not legal advice**). HF optional later. _(Supersedes “no publish yet” from section 26. D5 is the public **eval dataset** licence, not the library code licence.)_
 
 ## 8. Open questions for the owner
 - **Q1:** ~~Are you comfortable reviewing…~~ **Answered (section 18):** owner-self. **Go-go (section 24) + final 6 (section 25):** **101** `owner_confirmed`. **Owner-delegated bilingual pass (section 26):** all autos + all confirms; guessy ≪ 20%; tag `owner_delegated_bilingual_pass_2026-11-04`. Cite eval reports for any accuracy numbers; no production marketing claim without evidence.
@@ -53,8 +53,8 @@ Public GitHub repo `urdu-business-nlu` (MIT) — created under owner account whe
 | **N4** | Privacy/legal: status of Pakistani data-protection rules for storing message samples; consent wording | Written checklist (not legal advice) |
 
 ## 10. Punch list
-**Open:** public write-up / dataset publish (still ask-first); M1 shop outreach deferred (Q2 synthetic-only 90d); bare hazaar deferred; N2 LLM/hybrid arms (need key); M4 LLM adapter deferred; voice adapter + consented WA-domain WER (out of Q3 v0).
-**Resolved:** N1/N3/N4; SPEC §7 ~101 proposed; adversary demotions; Q1/Q2/Q3/D1; M2 scaffold + proposer; Week-1/Week-2 stamps + gold 101 (sections 22–25); **owner-delegated bilingual pass** (section 26); **D5=CC-BY-4.0** (section 26); **M3 GO rules-only v0** (section 26); bill-amount attach polish; baseline silent 0/96; `npm test` 71; **M5 local scaffold + empty public GitHub repo** (section 27); **`main` pushed + rulesets applied** (section 28); **About + v0.1.0 tag/release** (section 29); **README Install/Usage + UTF-8 example SVG + `docs/USAGE.md`** (section 30); **owner authorized CI + npm** (section 31); **CI restored + `urdu-business-nlu@0.1.0` published** (section 32).
+**Open:** owner to paste LinkedIn draft (agent draft-only); M1 shop outreach deferred (Q2 synthetic-only 90d); bare hazaar deferred; N2 LLM/hybrid arms (need key); M4 LLM adapter deferred; voice adapter + consented WA-domain WER (out of Q3 v0); optional Hugging Face dataset mirror.
+**Resolved:** N1/N3/N4; SPEC §7 ~101 proposed; adversary demotions; Q1/Q2/Q3/D1; M2 scaffold + proposer; Week-1/Week-2 stamps + gold 101 (sections 22–25); **owner-delegated bilingual pass** (section 26); **D5=CC-BY-4.0** (section 26); **M3 GO rules-only v0** (section 26); bill-amount attach polish; baseline silent 0/96; `npm test` 71; **M5 local scaffold + empty public GitHub repo** (section 27); **`main` pushed + rulesets applied** (section 28); **About + v0.1.0 tag/release** (section 29); **README Install/Usage + UTF-8 example SVG + `docs/USAGE.md`** (section 30); **owner authorized CI + npm** (section 31); **CI restored + `urdu-business-nlu@0.1.0` published** (section 32); **write-up drafts + dataset publish `v0.1.0-dataset`** (section 33).
 
 ## 11. Working agreements
 - Deterministic core; AI proposes, validator decides; zero silent errors as the goal.
@@ -592,3 +592,29 @@ Owner said **done** after OTP for `npm publish`. Verified and finished remaining
 **Evidence (agent finish):** `npm test` 71 + `npm run build` before publish; interactive npm web 2FA (no secrets recorded); `npm view` → 0.1.0.
 
 **Supersedes:** section 31 auth blockers; punch-list CI/npm open items.
+
+_Superseded for write-up + dataset ask-first by section 33._
+
+## 33. Session update: write-up drafts + dataset publish (2026-11-05)
+
+Owner: **"1. yes please. 2. what and do"** for remaining ask-first items (public write-up + separate dataset publish). Contact email on surfaces: arsalanarshad.dev@gmail.com.
+
+### What “separate dataset publish” means
+Make the eval gold (`eval/gold/**`) discoverable as a **dataset** (licence + citation + no PII), not only as files inside the library repo — practical form: `docs/DATASET.md` + versioned GitHub release archive (HF optional).
+
+### Done
+1. **Write-ups (draft only):** [`docs/announcements/2026-11-v0.1.0-linkedin.md`](docs/announcements/2026-11-v0.1.0-linkedin.md) + [`docs/announcements/2026-11-v0.1.0-writeup.md`](docs/announcements/2026-11-v0.1.0-writeup.md). Honest: MIT TS library, rules-only v0, silent-error focus, M3 GO, npm + GitHub, no fake accuracy %, not a WhatsApp bot. Links to GitHub, npm, `npm i urdu-business-nlu`. **No LinkedIn tool available — not posted; owner pastes.**
+2. **`docs/DATASET.md`:** CC-BY-4.0, cite, 101 synthetic owner-confirmed, no real chats/audio, gold path, not legal advice.
+3. **Privacy-scan** on `eval/gold` / staging: `scripts/privacy-scan.sh` → no hits (heuristic).
+4. **Package:** `dist-dataset/` (gitignored) + `urdu-business-nlu-eval-gold-v0.1.0.tar.gz` (gold/** + DATASET.md); attach to GitHub release **`v0.1.0-dataset`**.
+5. **HF:** `huggingface-cli` / `hf` not installed — skipped; documented as optional later (GitHub release is the publish for now).
+6. **README** Dataset section → DATASET.md + release; DATA_AND_PRIVACY + BUILD_PLAN M5 updated.
+
+### Still ask-first
+- Shop outreach (Q2 window).
+- Owner paste/post LinkedIn from draft.
+- Optional HF mirror.
+
+**Evidence:** announcement paths; `docs/DATASET.md`; release URL once uploaded; privacy-scan clean; no HF CLI.
+
+**Supersedes:** section 32 “Still ask-first — LinkedIn/write-up, separate dataset publish”; punch-list write-up/dataset open; §7 D5 “no publish yet”.

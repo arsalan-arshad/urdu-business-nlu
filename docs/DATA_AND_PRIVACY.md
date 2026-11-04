@@ -9,4 +9,4 @@ _Not legal advice. Pakistani data-protection requirements are to be checked in s
 5. **Minimal fields.** Store only what the eval needs.
 6. **Removal:** a documented way to remove a contributed sample on request.
 7. **Library behaviour:** the library does not log, store or send message text unless the integrator configures it.
-8. **Dataset licence (D5):** **CC-BY-4.0** for public synthetic eval when/if published (locked 2026-11-04; not legal advice); code is MIT. **No data is released until explicit M5 / publish ask-first** — choosing the licence is not permission to publish.
+8. **Dataset licence (D5):** **CC-BY-4.0** for the public synthetic eval (locked 2026-11-04; not legal advice); code is MIT. **Published** as GitHub release `v0.1.0-dataset` + [`docs/DATASET.md`](DATASET.md) (owner authorized 2026-11-05). Hugging Face optional later.

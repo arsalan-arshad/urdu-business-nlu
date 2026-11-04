@@ -16,7 +16,7 @@ This is an **npm/TypeScript library + eval set**, not a hosted SaaS. Source live
 
 ## What this is
 
-An open-source (**MIT**) TypeScript library plus an in-repo synthetic eval set (public dataset licence **CC-BY-4.0** when/if published separately — **not legal advice**; gold is in `eval/gold/**` today, not a separate data release) that turns informal Urdu, Roman-Urdu and mixed-English business messages (orders, payments, credit/udhaar, delivery) into **validated structured records**. A deterministic validator checks every number, unit and date; anything uncertain goes to human confirmation.
+An open-source (**MIT**) TypeScript library plus a public synthetic eval set (**CC-BY-4.0** — **not legal advice**; gold in [`eval/gold/`](eval/gold/), packaged as release `v0.1.0-dataset`) that turns informal Urdu, Roman-Urdu and mixed-English business messages (orders, payments, credit/udhaar, delivery) into **validated structured records**. A deterministic validator checks every number, unit and date; anything uncertain goes to human confirmation.
 
 **Not in scope for v0:** WhatsApp bot, Meta Business API, ledger storage, payments, ASR, or a hosted API.
 
@@ -95,9 +95,18 @@ flowchart LR
   V -->|invalid| R["reject"]
 ```
 
+## Dataset
+
+Public eval gold: **101** synthetic `owner_confirmed` examples under **CC-BY-4.0** (code remains **MIT** — **not legal advice**).
+
+- Docs + citation: [`docs/DATASET.md`](docs/DATASET.md)
+- In-repo path: [`eval/gold/`](eval/gold/)
+- Packaged release: [v0.1.0-dataset](https://github.com/arsalan-arshad/urdu-business-nlu/releases/tag/v0.1.0-dataset) (`urdu-business-nlu-eval-gold-v0.1.0.tar.gz`)
+- Hugging Face: not published yet — GitHub release is the dataset publish for now
+
 ## Data & privacy
 
-Synthetic or explicitly consented, anonymised samples only. No scraping, no real chats in the repo. Draft contributor consent lives in the [N4 spike](docs/spikes/N4-2026-10-31.md) (**not legal advice**). Code is **MIT**. Eval data intended **CC-BY-4.0** when/if published as a separate dataset — **not published separately yet**; gold remains in this repo. See [`docs/DATA_AND_PRIVACY.md`](docs/DATA_AND_PRIVACY.md).
+Synthetic or explicitly consented, anonymised samples only. No scraping, no real chats in the repo. Draft contributor consent lives in the [N4 spike](docs/spikes/N4-2026-10-31.md) (**not legal advice**). Code is **MIT**. Eval data **CC-BY-4.0** as a separate dataset publish (`v0.1.0-dataset`). See [`docs/DATASET.md`](docs/DATASET.md) and [`docs/DATA_AND_PRIVACY.md`](docs/DATA_AND_PRIVACY.md).
 
 ## Contributing / security / licence
 
